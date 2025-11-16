@@ -63,7 +63,7 @@ class CodeceptionLogger implements LoggerInterface
      *
      * @return null
      */
-    public function emergency($message, array $context = array())
+    public function emergency($message, array $context = array()): void
     {
         if (!$this->silent) {
             Debug::debug($message);
@@ -81,7 +81,7 @@ class CodeceptionLogger implements LoggerInterface
      *
      * @return null
      */
-    public function alert($message, array $context = array())
+    public function alert($message, array $context = array()): void
     {
         if (!$this->silent) {
             Debug::debug($message);
@@ -97,7 +97,7 @@ class CodeceptionLogger implements LoggerInterface
      *
      * @return null
      */
-    public function critical($message, array $context = array())
+    public function critical($message, array $context = array()): void
     {
         if (!$this->silent) {
             Debug::debug($message);
@@ -113,7 +113,7 @@ class CodeceptionLogger implements LoggerInterface
      *
      * @return null
      */
-    public function error($message, array $context = array())
+    public function error($message, array $context = array()): void
     {
         if (!$this->silent) {
             Debug::debug("<error>" . $message . "</error>");
@@ -136,7 +136,7 @@ class CodeceptionLogger implements LoggerInterface
      *
      * @return null
      */
-    public function warning($message, array $context = array())
+    public function warning($message, array $context = array()): void
     {
         if (!$this->silent) {
             Debug::debug($message);
@@ -151,7 +151,7 @@ class CodeceptionLogger implements LoggerInterface
      *
      * @return null
      */
-    public function notice($message, array $context = array())
+    public function notice($message, array $context = array()): void
     {
         if (!$this->silent) {
             Debug::debug($message);
@@ -167,7 +167,7 @@ class CodeceptionLogger implements LoggerInterface
      *
      * @return null
      */
-    public function info($message, array $context = array())
+    public function info($message, array $context = array()): void
     {
         if (!$this->silent) {
             Debug::debug($message);
@@ -182,7 +182,7 @@ class CodeceptionLogger implements LoggerInterface
      *
      * @return null
      */
-    public function debug($message, array $context = array())
+    public function debug($message, array $context = array()): void
     {
         if (!$this->silent) {
             Debug::debug($message);
@@ -198,7 +198,7 @@ class CodeceptionLogger implements LoggerInterface
      *
      * @return null
      */
-    public function log($level, $message, array $context = array())
+    public function log($level, $message, array $context = array()): void
     {
         if (!$this->silent) {
             Debug::debug($message);

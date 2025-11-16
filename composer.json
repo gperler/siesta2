@@ -3,7 +3,7 @@
   "description": "PHP 7 ORM Library",
   "require": {
     "php": ">=8.3.0",
-    "symfony/console": "6.4.*",
+    "symfony/console": "7.3.*",
     "psr/log": "*",
     "gm314/nitria": "^0.2.4",
     "gm314/common": "*",
@@ -13,8 +13,7 @@
     "ext-mysqli" : "*"
   },
   "require-dev": {
-    "codeception/codeception": "^5.1",
-    "phpdocumentor/phpdocumentor": "*"
+    "codeception/codeception": "^5.2"
   },
   "authors": [
     {
