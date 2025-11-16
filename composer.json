@@ -1,0 +1,55 @@
+{
+  "name": "gm314/siesta2",
+  "description": "PHP 7 ORM Library",
+  "require": {
+    "php": ">=8.3.0",
+    "symfony/console": "6.4.*",
+    "psr/log": "*",
+    "gm314/nitria": "^0.2.4",
+    "gm314/common": "*",
+    "ext-dom" : "*",
+    "ext-libxml" : "*",
+    "ext-json" : "*",
+    "ext-mysqli" : "*"
+  },
+  "require-dev": {
+    "codeception/codeception": "^5.1",
+    "phpdocumentor/phpdocumentor": "*"
+  },
+  "authors": [
+    {
+      "name": "Gregor Müller",
+      "email": "gm@gm314.de",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/gperler/siesta/issues"
+  },
+  "keywords": [
+    "Object relational mapper",
+    "ORM",
+    "Siesta"
+  ],
+  "autoload": {
+    "psr-0": {
+      "Siesta\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SiestaTest\\": "tests"
+    }
+  },
+  "license": "MIT",
+  "type": "library",
+  "homepage": "https://gperler.github.io",
+  "bin": [
+    "src/Siesta/Console/siesta"
+  ],
+  "config": {
+    "allow-plugins": {
+      "symfony/flex": true
+    }
+  }
+}

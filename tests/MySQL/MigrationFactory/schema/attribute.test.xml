@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<entity name="Attribute" namespace="Attribute"  table="Attribute">
+
+    <attribute name="id" type="int" dbType="INT" primaryKey="true" required="true" autoValue="autoincrement"/>
+    <attribute name="smallint" type="bool" dbType="SMALLINT" dbDefaultValue="1"/>
+    <attribute name="int" type="int" dbType="INT" required="true" dbDefaultValue="42"/>
+    <attribute name="string" type="string" dbType="VARCHAR(100)" primaryKey="true"/>
+    <attribute name="stringDefault" type="string" dbType="VARCHAR(100)" dbDefaultValue="'EB'"/>
+    <attribute name="datetime" type="SiestaDateTime" dbType="DATETIME" dbDefaultValue="'2025-11-04 14:00:00'"/>
+    <attribute name="modifyAttribute" type="SiestaDateTime" dbType="DATE" dbDefaultValue="'2025-11-04'"/>
+    <attribute name="time" type="SiestaDateTime" dbType="TIME" dbDefaultValue="'14:00:14'"/>
+    <attribute name="fk_artist" type="int" dbType="INT"/>
+    <attribute name="fk_name" type="string" dbType="VARCHAR(100)"/>
+
+</entity>

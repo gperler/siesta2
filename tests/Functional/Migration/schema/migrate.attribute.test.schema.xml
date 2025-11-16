@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<entityList>
+
+
+    <entity name="migrateAttribute" namespace="migrateAttribute" table="migrateAttribute">
+        <attribute name="noChange" type="int" dbType="INT" primaryKey="true" required="true"/>
+        <attribute name="changeType" type="int" dbType="TEXT"/>
+        <attribute name="changeRequired" type="int" dbType="VARCHAR(100)" required="false"/>
+        <attribute name="addColumn" type="int" dbType="VARCHAR(100)" required="false"/>
+        <attribute name="defaultValueSame" type="int" dbType="VARCHAR(100)" required="true" dbDefaultValue="'42'"/>
+        <attribute name="defaultValueChange" type="int" dbType="VARCHAR(100)" required="true" dbDefaultValue="'42'"/>
+
+    </entity>
+
+
+</entityList>
+

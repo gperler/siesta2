@@ -1,0 +1,61 @@
+{
+  "tableList": [
+    {
+      "name": "migrateAttribute",
+      "columnList": [
+        {
+          "dbType": "INT",
+          "dbName": "noChange",
+          "phpType": "int",
+          "isRequired": true,
+          "isPrimaryKey": true,
+          "dbDefaultValue": null
+        },
+        {
+          "dbType": "INT",
+          "dbName": "toDelete",
+          "phpType": "int",
+          "isRequired": true,
+          "isPrimaryKey": false,
+          "dbDefaultValue": null
+        },
+        {
+          "dbType": "VARCHAR(100)",
+          "dbName": "changeType",
+          "phpType": "int",
+          "isRequired": false,
+          "isPrimaryKey": false,
+          "dbDefaultValue": null
+        },
+        {
+          "dbType": "VARCHAR(100)",
+          "dbName": "changeRequired",
+          "phpType": "string",
+          "isRequired": true,
+          "isPrimaryKey": false,
+          "dbDefaultValue": null
+        },
+        {
+          "dbType": "VARCHAR(100)",
+          "dbName": "defaultValueSame",
+          "phpType": "string",
+          "isRequired": true,
+          "isPrimaryKey": false,
+          "dbDefaultValue": "42"
+        },
+        {
+          "dbType": "VARCHAR(100)",
+          "dbName": "defaultValueChange",
+          "phpType": "string",
+          "isRequired": true,
+          "isPrimaryKey": false,
+          "dbDefaultValue": "7"
+        }
+      ],
+      "indexList": [
+      ],
+      "constraintList": [
+      ]
+    }
+  ]
+}

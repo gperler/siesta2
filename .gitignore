@@ -1,0 +1,14 @@
+composer.lock
+vendor
+!**/.gitkeep
+tests/_output/*
+bin
+config/HelloWorld.entity.xml
+config/siesta.config.json
+config/siesta.reverse.config.json
+test.php
+.vagrant
+provision
+Vagrantfile
+.idea
+.idea/*
