@@ -75,7 +75,8 @@
         "Siesta\\GeneratorPlugin\\Transfer\\ReferenceGetterSetter",
         "Siesta\\GeneratorPlugin\\Transfer\\FromArrayPlugin",
         "Siesta\\GeneratorPlugin\\Transfer\\ConstructorPlugin",
-        "Siesta\\GeneratorPlugin\\Transfer\\CollectorGetterSetterPlugin"
+        "Siesta\\GeneratorPlugin\\Transfer\\CollectorGetterSetterPlugin",
+        "Siesta\\GeneratorPlugin\\Transfer\\ToArrayPlugin"
       ],
       "config": {
       },

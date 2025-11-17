@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Siesta\Util;
 
-use Siesta\Contract\Comparable;
 use Siesta\Contract\CycleDetector;
 
 /**
@@ -27,11 +26,11 @@ class ArrayCycleDetector implements CycleDetector
 
     /**
      * @param string $tableName
-     * @param Comparable $visitor
+     * @param object $visitor
      *
      * @return bool
      */
-    public function canProceed(string $tableName, Comparable $visitor): bool
+    public function canProceed(string $tableName, object $visitor): bool
     {
         $hash = spl_object_hash($visitor);
 
