@@ -10,9 +10,9 @@ class ArrayAccessor
 {
 
     /**
-     * @var array
+     * @var array|null
      */
-    protected array $data;
+    protected ?array $data;
 
     /**
      * @param array|null $data
