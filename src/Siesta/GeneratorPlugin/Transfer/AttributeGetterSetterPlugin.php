@@ -161,13 +161,9 @@ class AttributeGetterSetterPlugin extends BasePlugin
         $method = $this->classGenerator->addPublicMethod($methodName);
         $method->addParameter(PHPType::STRING, 'value', null, null, true);
 
-        $method->addIfStart('$value === null');
-        $method->addCodeLine('return;');
-        $method->addIfEnd();
-
         $classNameShort = $attribute->getEnumClassNameShort();
 
-        $method->addCodeLine('$this->' . $attribute->getPhpName() . ' = ' . $classNameShort . '::tryFrom($value);');
+        $method->addCodeLine('$this->' . $attribute->getPhpName() . ' = $value !== null ? ' . $classNameShort . '::tryFrom($value) : null;');
     }
 
 

@@ -25,11 +25,11 @@ use Siesta\Util\ArrayAccessor;
 class FromArrayPlugin extends BasePlugin
 {
 
-    const METHOD_TO_ARRAY = "toArray";
+    const string METHOD_TO_ARRAY = "toArray";
 
-    const METHOD_FROM_ARRAY = "fromArray";
+    const string METHOD_FROM_ARRAY = "fromArray";
 
-    const TYPE_ARRAY_ACCESSOR_MAPPING = [
+    const array TYPE_ARRAY_ACCESSOR_MAPPING = [
         PHPType::BOOL => "getBooleanValue",
         PHPType::INT => "getIntegerValue",
         PHPType::FLOAT => "getFloatValue",
