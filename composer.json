@@ -3,7 +3,7 @@
   "description": "PHP 7 ORM Library",
   "require": {
     "php": ">=8.3.0",
-    "symfony/console": "7.3.*",
+    "symfony/console": "*",
     "psr/log": "*",
     "gm314/nitria": "^0.2.4",
     "gm314/common": "*",
