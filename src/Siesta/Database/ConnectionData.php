@@ -140,7 +140,7 @@ class ConnectionData
         $isEnvParameter = boolval($values['useEnv'] ?? false);
         $configValue = $values[$key] ?? null;
         if ($isEnvParameter && $configValue !== null) {
-            return getenv($key);
+            return getenv($configValue);
         }
         return $configValue;
     }
