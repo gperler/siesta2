@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Siesta\Database;
 
 use Siesta\Util\ArrayUtil;
+use function boolval;
 use function getenv;
 use function intval;
 
@@ -136,11 +137,12 @@ class ConnectionData
      */
     private function getConfigValue(array $values, string $key): ?string
     {
-        $isEnvParameter = $values['useEnv'] ?? false;
-        if ($isEnvParameter) {
+        $isEnvParameter = boolval($values['useEnv'] ?? false);
+        $configValue = $values[$key] ?? null;
+        if ($isEnvParameter && $configValue !== null) {
             return getenv($key);
         }
-        return $values[$key] ?? null;
+        return $configValue;
     }
 
 
