@@ -6,6 +6,7 @@ namespace Siesta\Database;
 
 use Siesta\Util\ArrayUtil;
 use function getenv;
+use function intval;
 
 /**
  * @author Gregor Müller
@@ -121,9 +122,9 @@ class ConnectionData
         $this->isDefault = $values[self::IS_DEFAULT] ?? null;
         $this->postConnectStatementList = $values[self::POST_CONNECT_STATEMENT_LIST] ?? null;
 
-        $this->host = $this->getConfigValue($values, self::HOST);
-        $this->port = $this->getConfigValue($values, self::PORT);
         $this->database = $this->getConfigValue($values, self::DATABASE);
+        $this->host = $this->getConfigValue($values, self::HOST);
+        $this->port = intval($this->getConfigValue($values, self::PORT));
         $this->user = $this->getConfigValue($values, self::USER);
         $this->password = $this->getConfigValue($values, self::PASSWORD);
     }
@@ -131,9 +132,9 @@ class ConnectionData
     /**
      * @param array $values
      * @param string $key
-     * @return mixed
+     * @return string|null
      */
-    private function getConfigValue(array $values, string $key): mixed
+    private function getConfigValue(array $values, string $key): ?string
     {
         $isEnvParameter = $values['useEnv'] ?? false;
         if ($isEnvParameter) {
