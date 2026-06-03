@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Siesta\Database;
 
 use Siesta\Util\ArrayUtil;
+use function getenv;
 
 /**
  * @author Gregor Müller
@@ -82,6 +83,7 @@ class ConnectionData
      */
     public ?bool $isDefault;
 
+
     /**
      * ConnectionData constructor.
      *
@@ -113,17 +115,33 @@ class ConnectionData
      */
     public function fromArray(array $values): void
     {
-        $this->name = ArrayUtil::getFromArray($values, self::NAME);
-        $this->driver = ArrayUtil::getFromArray($values, self::DRIVER);
-        $this->host = ArrayUtil::getFromArray($values, self::HOST);
-        $this->port = ArrayUtil::getFromArray($values, self::PORT);
-        $this->database = ArrayUtil::getFromArray($values, self::DATABASE);
-        $this->user = ArrayUtil::getFromArray($values, self::USER);
-        $this->password = ArrayUtil::getFromArray($values, self::PASSWORD);
-        $this->charSet = ArrayUtil::getFromArray($values, self::CHARSET);
-        $this->isDefault = ArrayUtil::getFromArray($values, self::IS_DEFAULT);
-        $this->postConnectStatementList = ArrayUtil::getFromArray($values, self::POST_CONNECT_STATEMENT_LIST);
+        $this->name = $values[self::NAME] ?? null;
+        $this->driver = $values[self::DRIVER] ?? null;
+        $this->charSet = $values[self::CHARSET] ?? null;
+        $this->isDefault = $values[self::IS_DEFAULT] ?? null;
+        $this->postConnectStatementList = $values[self::POST_CONNECT_STATEMENT_LIST] ?? null;
+
+        $this->host = $this->getConfigValue($values, self::HOST);
+        $this->port = $this->getConfigValue($values, self::PORT);
+        $this->database = $this->getConfigValue($values, self::DATABASE);
+        $this->user = $this->getConfigValue($values, self::USER);
+        $this->password = $this->getConfigValue($values, self::PASSWORD);
     }
+
+    /**
+     * @param array $values
+     * @param string $key
+     * @return mixed
+     */
+    private function getConfigValue(array $values, string $key): mixed
+    {
+        $isEnvParameter = $values['useEnv'] ?? false;
+        if ($isEnvParameter) {
+            return getenv($key);
+        }
+        return $values[$key] ?? null;
+    }
+
 
     /**
      * @return array
